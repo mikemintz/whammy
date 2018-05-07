@@ -149,18 +149,18 @@ end
 
 -- Called when the user requests to move a node past the end of the current workspace.
 function screenlayout:_onMovePastEnd(workspace, node, direction)
-  local curIdx = self:_getWorkspaceIndex(workspace)
-  local newIdx = self:_getScreenInDirection(curIdx, direction)
+  -- local curIdx = self:_getWorkspaceIndex(workspace)
+  -- local newIdx = self:_getScreenInDirection(curIdx, direction)
 
-  node:removeFromParent()
+  -- node:removeFromParent()
 
-  -- Keep current screen selected, unless it's empty
-  if not self._screenInfos[curIdx].workspace:focusSelection() then
-    self._selectedScreenInfo = self._screenInfos[newIdx]
-    assert(self._selectedScreenInfo, "selectedScreenInfo is nil")
-  end
+  -- -- Keep current screen selected, unless it's empty
+  -- if not self._screenInfos[curIdx].workspace:focusSelection() then
+  --   self._selectedScreenInfo = self._screenInfos[newIdx]
+  --   assert(self._selectedScreenInfo, "selectedScreenInfo is nil")
+  -- end
 
-  self._windowRegistry:moveNodeGoingInDirection(node, direction, self._screenInfos[newIdx].workspace)
+  -- self._windowRegistry:moveNodeGoingInDirection(node, direction, self._screenInfos[newIdx].workspace)
 end
 
 function screenlayout:_getScreenInDirection(curIdx, direction)
